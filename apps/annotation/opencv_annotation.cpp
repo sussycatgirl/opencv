@@ -116,7 +116,8 @@ vector<Rect> get_annotations(Mat input_image)
     stop = false;
 
     // Init window interface and couple mouse actions
-    namedWindow(window_name, WINDOW_AUTOSIZE);
+    namedWindow(window_name, WINDOW_GUI_NORMAL);
+    resizeWindow(window_name, 800, 600);
     setMouseCallback(window_name, on_mouse);
 
     image = input_image;
@@ -210,7 +211,7 @@ vector<Rect> get_annotations(Mat input_image)
     while(key_pressed != 110);
 
     // Close down the window
-    destroyWindow(window_name);
+    // destroyWindow(window_name);
 
     // Return the data
     return current_annotations;
